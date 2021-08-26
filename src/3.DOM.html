@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      /*编写一个模拟用户登录的功能，正确的账号密码均为123，页面需要两个 input 节点和一个 button 节点。要求：
+       点击 button 时需要判断用户输入的账号密码是否为 123 ，并给予相应的提示（方式不限）
+       如果账号或密码错误，将密码所在的 input 节点中的内容清空*/
+      function check(f)//检测函数
+      {
+          if(f.user.value=="")//如果用户名为空
+          {
+              alert("用户名错误！");//弹出提示框
+              f.user.focus();//文本框获取焦点
+              return false;//返回错误
+          }
+          if(f.pw.value=="")
+          {
+              alert("请输入密码！");
+              f.pw.focus();
+              return false;
+          }
+          return false;
+      }
+    </script>
+</head>
+<body>
+        <form onsubmit="return check(this)" action="">
+            用户名：<input type=text name=user><p>
+            密  码：<input type=password name=pw size=21><p>
+            <input type=submit value=提交>
+        </form>
+</body>
+</html>
